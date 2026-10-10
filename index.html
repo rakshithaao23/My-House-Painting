@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Happy House Painting World</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-icon">🏡</div>
+    <div>
+      <h1>My Happy House Painting World</h1>
+      <p>Choose a house, pick your colours, and make it yours!</p>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="progress-card">
+      <div class="progress-top">
+        <strong>🌟 Your painting adventure</strong>
+        <span id="progressText">0 of 100 houses completed</span>
+      </div>
+      <div class="progress-track">
+        <div id="progressBar"></div>
+      </div>
+      <p id="progressMessage">Let's paint your first house!</p>
+    </section>
+
+    <section class="layout">
+      <aside class="panel levels-panel">
+        <h2>🏘️ House Levels</h2>
+        <p class="muted">Finish a house to unlock the next one.</p>
+        <div id="houseGrid" class="house-grid"></div>
+      </aside>
+
+      <section class="panel painting-panel">
+        <div class="name-box">
+          <label for="houseNameInput">✨ Give your house a name</label>
+          <div class="name-row">
+            <input id="houseNameInput" type="text" maxlength="30"
+                   placeholder="Example: Sunshine House">
+            <button id="saveHouseName" class="green-button">Save Name</button>
+          </div>
+          <p id="nameMessage" class="small-message">Choose a special name!</p>
+        </div>
+
+        <div class="painting-heading">
+          <div>
+            <p class="eyebrow" id="houseNumber">HOUSE 1</p>
+            <h2 id="houseTitle">My House 1</h2>
+          </div>
+          <span id="houseStatus" class="status-pill">In progress</span>
+        </div>
+
+        <div class="side-tabs" aria-label="Choose house side">
+          <button class="side-button active" data-side="Front">Front</button>
+          <button class="side-button" data-side="Back">Back</button>
+          <button class="side-button" data-side="Left">Left</button>
+          <button class="side-button" data-side="Right">Right</button>
+        </div>
+
+        <div class="canvas-wrap">
+          <svg id="houseCanvas" viewBox="0 0 500 390"
+               role="img" aria-label="House colouring canvas"></svg>
+        </div>
+        <p class="hint">🖌️ Choose a colour, then click or drag inside a house part.</p>
+
+        <div class="tools">
+          <div class="tool-section">
+            <h3>🎨 Choose a colour</h3>
+            <div id="colorPalette" class="color-palette"></div>
+            <div class="custom-color-row">
+              <label for="customColor">Your own colour</label>
+              <input type="color" id="customColor" value="#ff6b6b">
+              <span id="selectedColorName">Selected colour</span>
+            </div>
+          </div>
+
+          <div class="tool-section brush-section">
+            <label for="brushSize"><strong>🖌️ Brush size</strong></label>
+            <div class="brush-row">
+              <input type="range" id="brushSize" min="1" max="3" value="1">
+              <span id="brushSizeLabel">Normal</span>
+            </div>
+            <p class="muted small">The brush colours one enclosed part at a time.</p>
+          </div>
+        </div>
+
+        <div class="action-buttons">
+          <button id="undoButton" class="secondary-button">↩️ Undo</button>
+          <button id="resetSideButton" class="secondary-button">Reset Side</button>
+          <button id="resetHouseButton" class="secondary-button">Reset House</button>
+          <button id="savePngButton" class="secondary-button">🖼️ Save as PNG</button>
+          <button id="finishHouseButton" class="green-button finish-button">⭐ Finish House</button>
+        </div>
+        <p id="actionMessage" class="action-message" aria-live="polite"></p>
+      </section>
+    </section>
+  </main>
+
+  <footer>🌈 Every house is your own little masterpiece!</footer>
+  <script src="script.js"></script>
+</body>
+</html>
